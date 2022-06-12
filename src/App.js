@@ -11,14 +11,16 @@ function App() {
 
       <div className="content p-40">
         <div className="d-flex aligh-center justify-between mb-40">
-          <h1 >English word</h1>
+          <h1 >English words</h1>
         </div>
+
         
         <div className='cards d-flex'>
           <Card />
         </div>
 
-        <div className='mt-40'>
+        
+        <div className='mt-20'>
         <History/>
         </div>
 

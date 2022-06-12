@@ -4,7 +4,7 @@ function Header() {
             <div className='d-flex align-center'>
                 <img width={40} height={40} src="img/flag.png" alt="Logo" />
                 <div>
-                    <h3 className='text-uppercase'>English word</h3>
+                    <h3 className='text-uppercase'>English words</h3>
                     <p className='opacity-5'>English translation</p>
                 </div>
             </div>            

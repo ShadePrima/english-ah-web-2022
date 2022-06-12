@@ -1,21 +1,31 @@
 function Card() {
     return (
-        <div className="card">
-        <div className="card__header">
+
+        <div>
             <h3>Words</h3>
-        </div>
-        <div className="card__info d-flex justify-between" >
-        <div className='card__left'>
-        <textarea autoFocus></textarea>
+            <div className="container">
+                <div className="card d-flex">
+
+                    <div className='card__left'>
+
+                        <textarea autoFocus></textarea>
+                    </div>
+
+                    <div className='card__centr'>
+
+                    </div>
+
+                    <div className='card__right'>
+                        Example
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
 
-        <div className='card__right'>
-            Example
-        </div>
-           
-        </div>
-        
-        </div>
+
     )
 }
 export default Card
