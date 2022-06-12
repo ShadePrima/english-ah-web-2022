@@ -4,7 +4,7 @@ function Card() {
         <div>
             <h3>Words</h3>
             <div className="container">
-                <div className="card d-flex">
+                <div className="card card__words d-flex">
 
                     <div className='card__left'>
 
