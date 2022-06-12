@@ -40,14 +40,10 @@ header {
 }
 
 .container {
-  width: 980px;
-  min-width: 120px;
+  max-width: 980px;
+
 }
 
-.cards {
-  display: flex;
-  justify-content: space-between;
-}
 
 .card {
   border: 2px solid #848985;

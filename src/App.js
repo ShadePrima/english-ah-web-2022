@@ -1,7 +1,9 @@
 import Card from './components/Card'
 import Drawer from './components/Drawer';
+
 import Header from './components/Header';
 import History from './components/History';
+
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
         </div>
 
         
-        <div className='cards d-flex'>
+        <div>
           <Card />
         </div>
 
