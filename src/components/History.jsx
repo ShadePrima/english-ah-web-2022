@@ -1,7 +1,9 @@
 const arr = [
     { index: 1, name: 'word1' },
     { index: 2, name: 'word2' },
-    { index: 3, name: 'word3' }
+    { index: 3, name: 'word3' },
+    { index: 4, name: 'word3' },
+    { index: 5, name: 'word3' }
 ]
 
 function History() {
