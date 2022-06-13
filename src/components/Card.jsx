@@ -19,11 +19,13 @@ function Card(props) {
         setTextareaText('')
     }
     console.log(addNewText)
+  
    
     return (
         <div className="container">
             <h3>Words</h3>
                 <button
+                    className='mb-10 cardButton'
                     onClick={addNewText}
                 >
                     Translate
@@ -46,10 +48,11 @@ function Card(props) {
                 </div>
 
                 <div className='card__right'>
+                    {textareaText}
                     
-                    {texts.map((obj) => (
+                    {/* {texts.map((obj) => (
                         obj.value
-                    ))}
+                    ))} */}
                 </div>
 
             </div>

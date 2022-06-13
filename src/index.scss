@@ -79,6 +79,26 @@ header {
 
 }
 
+.cardButton {
+  background: #9DD458;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-dox;
+  border-radius: 8px;
+  height: 32px;
+  width: 72px;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+
+
+    &:hover {
+      background: lighten(#9DD458, 5%);
+    }
+
+    &:active {
+      background: darken(#9DD458, 10%)
+    }
+}
+
 
 .history__card {
   padding-top: 0;
