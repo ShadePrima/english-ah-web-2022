@@ -92,6 +92,7 @@ function App() {
         <h3>History</h3>
         <div className='mt-20'>          
           <History
+            texts={texts}
             title={textareaText}
           />
         </div>

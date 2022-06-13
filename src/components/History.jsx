@@ -1,25 +1,21 @@
-const arr = [
-    { name: 'word1' },
-    { name: 'word2' },
-    { name: 'word3' },
-    { name: 'word4' },
-    { name: 'word5' }
-]
-
 
 
 function History(props) {
+    console.log(props.texts)
     return (
-        
-       <div className="container">
-         <div className="card history__card mt-10">
-            <div className="history__info card__info d-flex justify-between flex-column" >
-               {props.title}            
-       
-            </div>
 
+        <div className="container">
+            <div className="card history__card mt-10">
+                <div className="history__info card__info d-flex justify-between flex-column" >
+                    {props.texts.map((obj) => (
+                        obj.value
+                    ))}
+
+
+                </div>
+
+            </div>
         </div>
-       </div>
     )
 }
 export default History
