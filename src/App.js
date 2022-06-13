@@ -4,8 +4,19 @@ import Drawer from './components/Drawer';
 import Header from './components/Header';
 import History from './components/History';
 
+const arr = [
+
+  {number: 1, title: 'word1'},
+  // {number: 2, title: 'word2'},
+  // {number: 3, title: 'word3'},
+  // {number: 4, title: 'word4'},
+  // {number: 5, title: 'word5'},
+]
+
 
 function App() {
+
+ 
   return (
     <div className="wrapper clear">
       <Drawer />
@@ -18,12 +29,22 @@ function App() {
 
         
         <div>
-          <Card />
+          {arr.map((obj) => (
+            <Card 
+              title={obj.title} 
+              />
+          ))}
         </div>
 
-        
+      
+        <h3>History</h3>
         <div className='mt-20'>
-        <History/>
+        {arr.map((obj) => (
+          <History
+            number={obj.number}
+            title={obj.title}
+          />
+        ))}
         </div>
 
       </div>

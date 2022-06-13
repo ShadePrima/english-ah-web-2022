@@ -48,7 +48,7 @@ header {
 .card {
   border: 2px solid #848985;
   padding: 0;
-  height: 150px;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -83,6 +83,7 @@ header {
 .history__card {
   padding-top: 0;
   overflow: scroll;
+  border-radius: 5px;
 
 }
 

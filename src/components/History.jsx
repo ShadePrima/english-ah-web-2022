@@ -1,21 +1,21 @@
 const arr = [
-    { index: 1, name: 'word1' },
-    { index: 2, name: 'word2' },
-    { index: 3, name: 'word3' },
-    { index: 4, name: 'word3' },
-    { index: 5, name: 'word3' }
+    { name: 'word1' },
+    { name: 'word2' },
+    { name: 'word3' },
+    { name: 'word4' },
+    { name: 'word5' }
 ]
 
-function History() {
+
+
+function History(props) {
     return (
         
        <div className="container">
-        <h3>History</h3>
-         <div className="card history__card">
+         <div className="card history__card mt-10">
             <div className="history__info card__info d-flex justify-between flex-column" >
-                {arr.map((val) => (
-                    <p className='ml-20'>{val.index}.{val.name}</p>
-                ))}
+               {props.number}.{props.title}            
+       
             </div>
 
         </div>
