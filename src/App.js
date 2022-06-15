@@ -1,104 +1,73 @@
-import { useState } from 'react';
-import Card from './components/Card'
-import Drawer from './components/Drawer';
 
 import Header from './components/Header';
-import History from './components/History';
+import Card from './components/Card/Card';
+import CardHistory from './components/CardHistory/CardHistory';
+import CardTranslate from './components/CardTranslate/CardTranslate';
+import React from 'react';
 
-const arr = [
-
-  { number: 1, title: 'word1' },
-  // {number: 2, title: 'word2'},
-  // {number: 3, title: 'word3'},
-  // {number: 4, title: 'word4'},
-  // {number: 5, title: 'word5'},
-]
 
 
 function App() {
-  const [textareaText, setTextareaText] = useState('')
-  const [texts, setTexts] = useState([])
+  
+  const [word, setWord] = React.useState('')
+  const [posts, setPosts] = React.useState('')
 
-  const addNewText = () => {
-    const newText = {
-      id: Math.random(),
-      value: textareaText
+  // const myPosts = posts
+  // console.log(myPosts)
+ 
+
+
+    const newText = (event) => {
+        setWord(event.target.value)
     }
-    console.log(newText)
-    setTexts([...texts, newText])
-    setTextareaText('')
-  }
+
+    const addNewPost = () => {
+      const newPost = {
+        // id: Math.random(),
+        value: word,        
+      }
+      
+      setPosts([...posts, newPost ])
+      setWord('')
+    }
+    
 
   return (
     <div className="wrapper clear">
-      <Drawer />
       <Header />
+      
+      <Card
+        title='Enter your word'
+        newText={newText}
+        word={word}        
+      />
 
-      <div className="content p-40">
-        <div className="d-flex aligh-center justify-between mb-40">
-          <h1 >English words</h1>
+      <button
+      onClick={addNewPost}
+      className='waves-effect waves-light btn ml-50'
+      >
+      Translate
+      </button>
+
+
+     <CardTranslate
+        title='Translate'
+        word={word}
+        posts={posts}
+     />
+
+      <CardHistory
+        title='History'
+      />
+
+        <div>
+          <h1>example</h1>
+          {/* {posts.map((post) => 
+            <p>{post}</p>
+          )} */}
         </div>
 
-
-        <div className="container">
-          <h3>Words</h3>
-          <button
-            className='mb-10 cardButton'
-            onClick={addNewText}
-          >
-            Translate
-          </button>
-          <div className="card d-flex">
-
-
-            <div className='card__left'>
-
-              <textarea
-                placeholder='Enter your word'
-                autoFocus
-                value={textareaText}
-                onChange={(e) => setTextareaText(e.target.value)}
-              >
-              </textarea>
-            </div>
-
-            <div className='card__centr'>
-            </div>
-
-            <div className='card__right'>
-              {texts.map((obj) => (
-                obj.value
-              ))}
-            </div>
-
-          </div>
-        </div>
-
-
-
-
-        {/* <div>
-          {arr.map((obj) => (
-            <Card 
-              addNewText={addNewText}
-              textareaText={textareaText}
-              texts={texts}
-              title={obj.title} 
-              />
-          ))}
-        </div> */}
-
-
-        <h3>History</h3>
-        <div className='mt-20'>          
-          <History
-            texts={texts}
-            title={textareaText}
-          />
-        </div>
-
-      </div>
-    </div>
+    </div>   
   );
 }
 
