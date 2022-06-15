@@ -5,30 +5,46 @@ import CardHistory from './components/CardHistory/CardHistory';
 import CardTranslate from './components/CardTranslate/CardTranslate';
 import React from 'react';
 
-
+const arr = [
+  { title: 'pen' },
+  { title: 'appel'},
+  { title: 'book' },
+  { title: 'bird' },
+  { title: 'table' },
+  { title: 'sky' },
+  // { name: 'Men’s Sneakers Jordan Air Jordan 11', price: 140, imageUrl: '/img/sneakers/2.jpg' },
+  // { name: 'Men’s Sneakers Nike Air Max 270 ', price: 150, imageUrl: '/img/sneakers/2.jpg' }
+]
 
 function App() {
   
-  const [word, setWord] = React.useState('')
+  const [words, setWords] = React.useState('')
   const [posts, setPosts] = React.useState('')
+  console.log(words)
+  console.log(posts)
 
-  // const myPosts = posts
-  // console.log(myPosts)
+
+  // const myArr = posts
+
+
+  // console.log(posts)
  
 
 
-    const newText = (event) => {
-        setWord(event.target.value)
+    const newText = (event) => {      
+        setWords(event.target.value)        
     }
+
+
 
     const addNewPost = () => {
       const newPost = {
-        // id: Math.random(),
-        value: word,        
+        id: Math.random(),
+        value: words,        
       }
       
       setPosts([...posts, newPost ])
-      setWord('')
+      setWords('')
     }
     
 
@@ -39,33 +55,30 @@ function App() {
       <Card
         title='Enter your word'
         newText={newText}
-        word={word}        
+        word={words}        
       />
 
       <button
       onClick={addNewPost}
-      className='waves-effect waves-light btn ml-50'
+      className='ml-50'
       >
       Translate
       </button>
-
-
-     <CardTranslate
+      
+      <CardTranslate
         title='Translate'
-        word={word}
+        words={words}
+        arr={arr}
         posts={posts}
-     />
+      />
+      
 
       <CardHistory
         title='History'
+        posts={posts}
+        arr={arr}
       />
 
-        <div>
-          <h1>example</h1>
-          {/* {posts.map((post) => 
-            <p>{post}</p>
-          )} */}
-        </div>
 
     </div>   
   );
