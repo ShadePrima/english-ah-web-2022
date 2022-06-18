@@ -1,18 +1,19 @@
 import styles from './CardHistory.module.scss'
 
-const CardHistory = (props) => {
-  const {arr} = props
+const CardHistory = ({arr, posts, title}) => {
+  // const {arr} = props
+  const myPosts = posts || []
 
   
 
 
   return (
     <div className={styles.wrapper}>
-      <h2>{props.title}</h2>
+      <h2>{title}</h2>
       <div className={styles.card}>
         <div className='d-flex flex-column'>
-        {arr.map((obj) => (
-          <span>{obj.title}</span>          
+        {myPosts.map((obj) => (
+          <span>{obj.value}</span>          
         ))}
         </div>
       </div>

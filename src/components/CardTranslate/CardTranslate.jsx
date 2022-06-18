@@ -1,21 +1,22 @@
 
 import styles from './CardTranslate.module.scss'
 
-const CardTranslate = (props) => {
-  // console.log(props)
-  const {arr, posts} = props
-  // console.log(arr)
-  const lastElement = arr[arr.length - 1]
-  console.log(lastElement)
- 
+function CardTranslate({ arr, title, posts }) {
+  const myPosts = posts || [{id: '', value: ''}]
+  console.log(myPosts)
+
 
   return (
     <div className={styles.wrapper}>
-      <h2>{props.title}</h2>
+      <h2>{title}</h2>
       <div className={styles.card}>
-        <div className='d-flex flex-column'>          
-          {lastElement.title}
-                 
+        <div className='d-flex flex-column'>
+          {/* {lastElement.title} */}
+          {/* {myPosts.map((obj) => (
+            obj[0].value
+          ))} */}
+          {myPosts[myPosts.length-1].value}
+
         </div>
       </div>
     </div>

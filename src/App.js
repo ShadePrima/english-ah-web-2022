@@ -21,7 +21,7 @@ function App() {
   const [words, setWords] = React.useState('')
   const [posts, setPosts] = React.useState('')
   console.log(words)
-  console.log(posts)
+  // console.log(posts)
 
 
   // const myArr = posts
